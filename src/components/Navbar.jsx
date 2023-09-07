@@ -76,9 +76,10 @@ const Navbar = () => {
     const [query, setQuery] = useState("");
     const {currentUser} = useSelector(state=> state.user);
     console.log("check this out", currentUser?.name);
+    const axiosInstance = axios.create({baseURL: process.env.REACT_APP_API_URL});
     const handleLogOut = async()=>{
         try{
-            await axios.post("/auth/logout");
+            await axiosInstance.post("/auth/logout");
             dispatch(logout());
             navigate('/');
         }catch(err){

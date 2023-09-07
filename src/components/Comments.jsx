@@ -24,13 +24,13 @@ const Input = styled.input`
 
 const Comments = ({videoId})=> {
     const { currentUser } = useSelector((state) => state.user);
-
+    const axiosInstance = axios.create({baseURL: process.env.REACT_APP_API_URL});
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
         const fetchComments = async () => {
         try {
-            const res = await axios.get(`/comments/${videoId}`);
+            const res = await axiosInstance.get(`/comments/${videoId}`);
             setComments(res.data);
         } catch (err) {}
         };

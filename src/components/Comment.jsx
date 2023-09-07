@@ -36,11 +36,11 @@ const Details = styled.div`
     color: ${({theme})=> theme.text };
 `
 const Comment = ({ comment }) => {
-    
+    const axiosInstance = axios.create({baseURL: process.env.REACT_APP_API_URL});
     const [channel,setChannel] = useState({});
     useEffect(() => {
         const fetchComment = async () => {
-          const res = await axios.get(`/users/find/${comment.userId}`);
+          const res = await axiosInstance.get(`/users/find/${comment.userId}`);
           setChannel(res.data)
         };
         fetchComment();
