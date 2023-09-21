@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+# capstone-2 frontend
+a. The title of your site and a link to the URL where it is deployed
+Youtube clone
+https://youtube-clone-frontend-u1ec.onrender.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+b. Describe what your website does
+the website offering some basic function for a video sharing site
 
-## Available Scripts
+c. List the features you implemented and explain why you chose those
+features to implement
+user can do basic function such as 
+login/signup/logout
+subscribe/unsubscribe to a channel they like
+get random video popup/view trending video sort by views/check your recent history of watched video/ view any video have been saved to your library
+search for a video through keyword
+watching a video/leave a like or dislike/leave a comment to express their opinions/ saved video to their library
+upload your own video to share with other users 
+lightmode/darkmode
 
-In the project directory, you can run:
+Those feature has been chosen due to the fact it is related to each other to create a simple video sharing site.
+user will need to exist since without user there is no point in sharing video, they would need login/signup/logout method
+user will need an ability to subscribe/unsubscribe because the user would want to keep up to date with what the channel they interested in had to offer
+user will need an ability to recheck their watched/saved video, popup random or trending video to see what would caught their interested
+above all else, search function is critical when the number of video reach a certain amount
+normally after watching a video, user would want to somewhat express their opinion, either through like/dislike or leave a comment.
+user would need an ability to upload video, else their will be no video to begin with.
+lightmode/darkmode is simply for preference
 
-### `npm start`
+d. Where your tests are and how to run them
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+e. Walk someone through the standard user flow for the website
+User flow:
+Homepage: -> watch any video you want -> want to leave some form of identity -> required to signin/sign up -> perform any function the user is authenticated listed above
+          |
+          -> sign in/signup -> perform any function the user is authenticated listed above
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+f. Keep the API in there, and if you have anything to say about the API then
+add some notes. If you have created your own API, please document the
+process.
+https://youtube-clone-backend-15lp.onrender.com/api
 
-### `npm test`
+This is simply a rest api that communicate via HTTP requests to perform standard database functions like creating, reading, updating, and deleting records within a resource.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+g. Identify the technology stack used to create your website
+      node
+      mongodb
+      react
+      firebase
+      express
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+h. Include anything else that you feel is important to share
+Server side will need to run first before run the client side:
+Set up server:
+1. yarn
+2. node index.js
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# test1-frontend
+Set up client:
+1. yarn build
