@@ -1,40 +1,63 @@
-import {createSlice} from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-const initialState= {
-    currentVideo: null,
-    loading: false,
-    error: false,
+const initialState = {
+  currentVideo: null,
+  loading: false,
+  error: false,
+  isLiked: false,
+  isDisliked: false,
+  isSaved: false,
+  isSubscribed: false,
 };
 
 export const videoSlice = createSlice({
-    name: "video",
-    initialState,
-    reducers:{
-        fetchStart: (state) =>{
-            state.loading = true
-        },
-        fetchSuccess: (state,action) =>{
-            state.loading = false
-            state.currentVideo = action.payload;
-        },
-        fetchFailure: (state) =>{
-            state.loading = false;
-            state.error = true;
-        },
-        like:(state, action)=>{
-            if (!state.currentVideo.likes.includes(action.payload)){
-                state.currentVideo.likes.push(action.payload);
-                state.currentVideo.dislikes.splice(state.currentVideo.dislikes.findIndex(userId=> userId===action.payload),1);
-            }
-        },
-        dislike:(state, action)=>{
-            if (!state.currentVideo.dislikes.includes(action.payload)){
-                state.currentVideo.dislikes.push(action.payload);
-                state.currentVideo.likes.splice(state.currentVideo.likes.findIndex(userId=> userId===action.payload),1);
-            }
-        }
+  name: "video",
+  initialState,
+  reducers: {
+    fetchVideoStart: (state) => {
+      state = { ...initialState };
+      state.loading = true;
     },
+    fetchVideoSuccess: (state, action) => {
+      state.loading = false;
+      state.currentVideo = action.payload.currentVideo;
+    },
+    fetchVideoFailure: (state) => {
+      state = { ...initialState, error: true };
+    },
+    likeVideo: (state, action) => {
+      if (action.payload) {
+        state.currentVideo.likes -= 1;
+      } else {
+        state.currentVideo.likes += 1;
+      }
+    },
+    dislikeVideo: (state, action) => {
+      if (action.payload) {
+        state.currentVideo.dislikes -= 1;
+      } else {
+        state.currentVideo.dislikes += 1;
+      }
+    },
+    subscribeChannel: (state, action) => {
+      console.log(action.payload);
+      if (action.payload) {
+        state.currentVideo.userId.subscribers -= 1;
+      } else {
+        state.currentVideo.userId.subscribers += 1;
+      }
+    },
+  },
 });
 
-export const {fetchStart, fetchFailure, fetchSuccess,like, dislike} = videoSlice.actions;
+export const {
+  fetchVideoStart,
+  fetchVideoSuccess,
+  fetchVideoFailure,
+  likeVideo,
+  dislikeVideo,
+  saveVideo,
+  subscribeChannel,
+} = videoSlice.actions;
+
 export default videoSlice.reducer;

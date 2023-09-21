@@ -1,14 +1,15 @@
 export const darkMode = {
-    bg: "black",
-    bgLighter: "pink",
+    bg: "#181818",
+    bgLighter: "#202020",
     text: "white",
-    textSoft: "#cccccc",
-    soft: "grey",
-}
-export const lightMode = {
-    bg: "white",
+    textSoft: "#aaaaaa",
+    soft: "#373737",
+  };
+  export const lightMode = {
+    bg: "#f9f9f9",
     bgLighter: "white",
     text: "black",
-    textSoft: "#aaaaaa",
-    soft: "lightblue",
-}
+    textSoft: "#606060",
+    soft: "#f5f5f5",
+  };
+  
